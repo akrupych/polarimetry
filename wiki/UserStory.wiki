@@ -1,0 +1,6 @@
+  * User can press Open Package button. Than directory picker is shown. Package is a folder with any files, but containing 41 images with names R...tif (41 because of rotation angles number)
+  * All package is loaded into memory and displaying controls are changed. Labels in ToolStrip are getting their values, buttons become available and canvases are resized and moved to fit package images.
+  * User can go back and forth between images. Actual image info should be shown every time.
+  * When image is loaded, it gets a default selection, which can be edited by user. User can move edges of selection, or drag'n'drop it all.
+  * User can scale image to x2 and back.
+  * User can load palette file for image displaying.
