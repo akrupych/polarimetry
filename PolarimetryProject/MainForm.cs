@@ -25,8 +25,27 @@ namespace PolarimetryProject
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 Program.Package = new Package(dialog.SelectedPath);
+                LocateCanvases();
                 RefreshDisplay();
             }
+        }
+
+        private void LocateCanvases()
+        {
+            int width = Program.Package.CurrentPattern.Image.Width;
+            int height = Program.Package.CurrentPattern.Image.Height;
+            // resize all canvases to fit image and profiles
+            canvasImage.Size = new Size(width, height);
+            canvasTopProfile.Width = canvasBottomProfile.Width = width;
+            canvasLeftProfile.Height = canvasRightProfile.Height = height;
+            // move right and bottom profile canvases,
+            // because image canvas in the center is resized
+            canvasRightProfile.Location = new Point(
+                canvasImage.Right + canvasImage.Margin.Right + canvasRightProfile.Margin.Left,
+                canvasRightProfile.Location.Y);
+            canvasBottomProfile.Location = new Point(
+                canvasBottomProfile.Location.X,
+                canvasImage.Bottom + canvasImage.Margin.Bottom + canvasRightProfile.Margin.Top);
         }
 
         private void menuButtonPrev_Click(object sender, EventArgs e)
