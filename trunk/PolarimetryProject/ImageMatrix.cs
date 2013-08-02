@@ -103,27 +103,18 @@ namespace PolarimetryProject
             return result;
         }
 
-        public byte[] Column(int column)
+        public byte[] GetColumn(int column)
         {
-            if (column < 0) column = 0;
-            else if (column >= Columns) column = Columns - 1;
             byte[] result = new byte[Rows];
             for (int i = 0; i < Rows; i++)
-            {
                 result[i] = this[i, column];
-            }
             return result;
         }
 
-        public byte[] Row(int row)
+        public byte[] GetRow(int row)
         {
-            if (row < 0) row = 0;
-            else if (row >= Rows) row = Rows - 1;
             byte[] result = new byte[Columns];
-            for (int i = 0; i < Columns; i++)
-            {
-                result[i] = this[row, i];
-            }
+            Array.Copy(Data, row * Columns, result, 0, Columns);
             return result;
         }
     }
