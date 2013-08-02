@@ -7,6 +7,8 @@ namespace PolarimetryProject
 {
     static class Program
     {
+        public static Package Package { get; set; }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

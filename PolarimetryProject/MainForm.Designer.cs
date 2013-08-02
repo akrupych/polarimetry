@@ -33,8 +33,8 @@
             this.menuButtonOpen = new System.Windows.Forms.ToolStripButton();
             this.menuLabelPath = new System.Windows.Forms.ToolStripLabel();
             this.menuLabelPosition = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.menuButtonPrev = new System.Windows.Forms.ToolStripButton();
+            this.menuButtonNext = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,11 +45,11 @@
             this.menuButtonOpen,
             this.menuLabelPath,
             this.menuLabelPosition,
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.menuButtonPrev,
+            this.menuButtonNext});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(284, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(539, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -60,7 +60,8 @@
             this.menuButtonOpen.ImageTransparentColor = System.Drawing.Color.White;
             this.menuButtonOpen.Name = "menuButtonOpen";
             this.menuButtonOpen.Size = new System.Drawing.Size(23, 22);
-            this.menuButtonOpen.Text = "toolStripButton1";
+            this.menuButtonOpen.Text = "Open Package...";
+            this.menuButtonOpen.Click += new System.EventHandler(this.menuButtonOpen_Click);
             // 
             // menuLabelPath
             // 
@@ -72,31 +73,33 @@
             this.menuLabelPosition.Name = "menuLabelPosition";
             this.menuLabelPosition.Size = new System.Drawing.Size(0, 22);
             // 
-            // toolStripButton1
+            // menuButtonPrev
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Enabled = false;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.White;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.menuButtonPrev.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.menuButtonPrev.Enabled = false;
+            this.menuButtonPrev.Image = ((System.Drawing.Image)(resources.GetObject("menuButtonPrev.Image")));
+            this.menuButtonPrev.ImageTransparentColor = System.Drawing.Color.White;
+            this.menuButtonPrev.Name = "menuButtonPrev";
+            this.menuButtonPrev.Size = new System.Drawing.Size(23, 22);
+            this.menuButtonPrev.Text = "Previous Image";
+            this.menuButtonPrev.Click += new System.EventHandler(this.menuButtonPrev_Click);
             // 
-            // toolStripButton2
+            // menuButtonNext
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Enabled = false;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.White;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.menuButtonNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.menuButtonNext.Enabled = false;
+            this.menuButtonNext.Image = ((System.Drawing.Image)(resources.GetObject("menuButtonNext.Image")));
+            this.menuButtonNext.ImageTransparentColor = System.Drawing.Color.White;
+            this.menuButtonNext.Name = "menuButtonNext";
+            this.menuButtonNext.Size = new System.Drawing.Size(23, 22);
+            this.menuButtonNext.Text = "Next Image";
+            this.menuButtonNext.Click += new System.EventHandler(this.menuButtonNext_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(539, 436);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
             this.Text = "Polarimetry";
@@ -113,8 +116,8 @@
         private System.Windows.Forms.ToolStripButton menuButtonOpen;
         private System.Windows.Forms.ToolStripLabel menuLabelPath;
         private System.Windows.Forms.ToolStripLabel menuLabelPosition;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton menuButtonPrev;
+        private System.Windows.Forms.ToolStripButton menuButtonNext;
 
     }
 }
