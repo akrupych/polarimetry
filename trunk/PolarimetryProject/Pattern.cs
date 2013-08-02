@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Drawing;
 
 namespace PolarimetryProject
 {
@@ -11,6 +12,8 @@ namespace PolarimetryProject
         private ImageMatrix ImageMatrix { get; set; }
 
         public string FileName { get; set; }
+
+        public Image Image { get { return ImageMatrix.ToBitmap(); } }
 
         public Pattern(string filePath)
         {

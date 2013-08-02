@@ -51,6 +51,7 @@ namespace PolarimetryProject
                 menuLabelPosition.Text = string.Format("({0}/{1})", index + 1, count);
                 menuButtonPrev.Enabled = index > 0;
                 menuButtonNext.Enabled = index < Program.Package.Patterns.Count - 1;
+                canvasImage.BackgroundImage = Program.Package.CurrentPattern.Image;
                 DisplayedIndex = index;
             }
         }

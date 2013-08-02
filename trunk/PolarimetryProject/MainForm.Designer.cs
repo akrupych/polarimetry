@@ -35,6 +35,11 @@
             this.menuLabelPosition = new System.Windows.Forms.ToolStripLabel();
             this.menuButtonPrev = new System.Windows.Forms.ToolStripButton();
             this.menuButtonNext = new System.Windows.Forms.ToolStripButton();
+            this.canvasLeftProfile = new System.Windows.Forms.Panel();
+            this.canvasRightProfile = new System.Windows.Forms.Panel();
+            this.canvasImage = new System.Windows.Forms.Panel();
+            this.canvasTopProfile = new System.Windows.Forms.Panel();
+            this.canvasBottomProfile = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +54,7 @@
             this.menuButtonNext});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(539, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(653, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -95,11 +100,57 @@
             this.menuButtonNext.Text = "Next Image";
             this.menuButtonNext.Click += new System.EventHandler(this.menuButtonNext_Click);
             // 
+            // canvasLeftProfile
+            // 
+            this.canvasLeftProfile.BackColor = System.Drawing.Color.White;
+            this.canvasLeftProfile.Location = new System.Drawing.Point(12, 162);
+            this.canvasLeftProfile.Name = "canvasLeftProfile";
+            this.canvasLeftProfile.Size = new System.Drawing.Size(128, 300);
+            this.canvasLeftProfile.TabIndex = 1;
+            // 
+            // canvasRightProfile
+            // 
+            this.canvasRightProfile.BackColor = System.Drawing.Color.White;
+            this.canvasRightProfile.Location = new System.Drawing.Point(512, 162);
+            this.canvasRightProfile.Name = "canvasRightProfile";
+            this.canvasRightProfile.Size = new System.Drawing.Size(128, 300);
+            this.canvasRightProfile.TabIndex = 2;
+            // 
+            // canvasImage
+            // 
+            this.canvasImage.BackColor = System.Drawing.Color.White;
+            this.canvasImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.canvasImage.Location = new System.Drawing.Point(146, 162);
+            this.canvasImage.Name = "canvasImage";
+            this.canvasImage.Size = new System.Drawing.Size(360, 300);
+            this.canvasImage.TabIndex = 2;
+            // 
+            // canvasTopProfile
+            // 
+            this.canvasTopProfile.BackColor = System.Drawing.Color.White;
+            this.canvasTopProfile.Location = new System.Drawing.Point(146, 28);
+            this.canvasTopProfile.Name = "canvasTopProfile";
+            this.canvasTopProfile.Size = new System.Drawing.Size(360, 128);
+            this.canvasTopProfile.TabIndex = 2;
+            // 
+            // canvasBottomProfile
+            // 
+            this.canvasBottomProfile.BackColor = System.Drawing.Color.White;
+            this.canvasBottomProfile.Location = new System.Drawing.Point(146, 468);
+            this.canvasBottomProfile.Name = "canvasBottomProfile";
+            this.canvasBottomProfile.Size = new System.Drawing.Size(360, 128);
+            this.canvasBottomProfile.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 436);
+            this.ClientSize = new System.Drawing.Size(653, 606);
+            this.Controls.Add(this.canvasBottomProfile);
+            this.Controls.Add(this.canvasTopProfile);
+            this.Controls.Add(this.canvasImage);
+            this.Controls.Add(this.canvasRightProfile);
+            this.Controls.Add(this.canvasLeftProfile);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
             this.Text = "Polarimetry";
@@ -118,6 +169,11 @@
         private System.Windows.Forms.ToolStripLabel menuLabelPosition;
         private System.Windows.Forms.ToolStripButton menuButtonPrev;
         private System.Windows.Forms.ToolStripButton menuButtonNext;
+        private System.Windows.Forms.Panel canvasLeftProfile;
+        private System.Windows.Forms.Panel canvasRightProfile;
+        private System.Windows.Forms.Panel canvasImage;
+        private System.Windows.Forms.Panel canvasTopProfile;
+        private System.Windows.Forms.Panel canvasBottomProfile;
 
     }
 }
