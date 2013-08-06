@@ -42,5 +42,15 @@ namespace PolarimetryProject
             ImageMatrix = new ImageMatrix(filePath);
             FileName = Path.GetFileName(filePath);
         }
+
+        public byte[] GetRowProfile(int row)
+        {
+            return ImageMatrix.GetRow(row);
+        }
+
+        public byte[] GetColumnProfile(int column)
+        {
+            return ImageMatrix.GetColumn(column);
+        }
     }
 }
