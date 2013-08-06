@@ -6,6 +6,9 @@ using System.Drawing;
 
 namespace PolarimetryProject
 {
+    /// <summary>
+    /// Simple Java rectangle with Right and Bottom setters instead of Width and Height
+    /// </summary>
     class MyRectangle
     {
         public int Top { get; set; }

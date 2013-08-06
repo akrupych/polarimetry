@@ -6,16 +6,35 @@ using System.IO;
 
 namespace PolarimetryProject
 {
+    /// <summary>
+    /// Contains all loaded patterns
+    /// </summary>
     class Package
     {
+        /// <summary>
+        /// Gets patterns list
+        /// </summary>
         public List<Pattern> Patterns { get; private set; }
-
+        /// <summary>
+        /// Gets currently selected pattern
+        /// </summary>
         public Pattern CurrentPattern { get { return Patterns[CurrentIndex]; } }
-
+        /// <summary>
+        /// Gets or sets selected pattern index. You must perform boundary checking by yourself.
+        /// </summary>
         public int CurrentIndex { get; set; }
-
+        /// <summary>
+        /// Selected area to perform calculations in
+        /// </summary>
         public MyRectangle Selection { get; set; }
 
+        /// <summary>
+        /// Reads package from a folder with pattern images.
+        /// Folder can contain any number of files.
+        /// Every file with name like "R*.TIF" will be considered as pattern.
+        /// However, for calculation purposes, folder must contain at least 3 pattern files.
+        /// </summary>
+        /// <param name="folderPath">Folder with patterns</param>
         public Package(string folderPath)
         {
             Patterns = new List<Pattern>();

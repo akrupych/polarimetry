@@ -7,6 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace PolarimetryProject
 {
+    /// <summary>
+    /// Contains pattern raw data in an effective matrix.
+    /// Can be read from file and converted to a Bitmap.
+    /// </summary>
     class ImageMatrix
     {
         /// <summary>
@@ -95,6 +99,12 @@ namespace PolarimetryProject
             return bmp;
         }
 
+        /// <summary>
+        /// Converts matrix to fit the bitmap stride
+        /// </summary>
+        /// <param name="stride">Number of bytes per bitmap line
+        /// (it's aligned to 4 bytes for effectiveness)</param>
+        /// <returns>Array to be set as BitmapData</returns>
         private byte[] GetBitmapArray(int stride)
         {
             byte[] result = new byte[stride * Rows];
@@ -103,6 +113,11 @@ namespace PolarimetryProject
             return result;
         }
 
+        /// <summary>
+        /// Returns column profile
+        /// </summary>
+        /// <param name="column">Column index</param>
+        /// <returns>New array with column bytes</returns>
         public byte[] GetColumn(int column)
         {
             byte[] result = new byte[Rows];
@@ -111,9 +126,15 @@ namespace PolarimetryProject
             return result;
         }
 
+        /// <summary>
+        /// Returns row profile
+        /// </summary>
+        /// <param name="column">Row index</param>
+        /// <returns>New array with row bytes</returns>
         public byte[] GetRow(int row)
         {
             byte[] result = new byte[Columns];
+            // array implementation allows to increase effectiveness
             Array.Copy(Data, row * Columns, result, 0, Columns);
             return result;
         }
