@@ -7,6 +7,9 @@ namespace PolarimetryProject
 {
     static class Program
     {
+        /// <summary>
+        /// We are saving package here to allow access from different components
+        /// </summary>
         public static Package Package { get; set; }
 
         /// <summary>

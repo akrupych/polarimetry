@@ -9,12 +9,23 @@ using System.Windows.Forms;
 
 namespace PolarimetryProject
 {
+    /// <summary>
+    /// Main application form with action menu, main image and profiles
+    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Currently displayed image
+        /// </summary>
         private int displayedIndex;
-
+        /// <summary>
+        /// Main image with profiles
+        /// </summary>
         private CanvasGroup canvasGroup = new CanvasGroup();
 
+        /// <summary>
+        /// Initializes all the controls
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -22,6 +33,9 @@ namespace PolarimetryProject
             // y:=c1+ c2*cos(2*(x-c3)*pi/180);
         }
 
+        /// <summary>
+        /// User pressed on Open Package button
+        /// </summary>
         private void menuButtonOpen_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
@@ -33,20 +47,30 @@ namespace PolarimetryProject
             }
         }
 
+        /// <summary>
+        /// User pressed on Previous Image button
+        /// </summary>
         private void menuButtonPrev_Click(object sender, EventArgs e)
         {
             Program.Package.CurrentIndex--;
             RefreshDisplay();
         }
 
+        /// <summary>
+        /// User pressed on Next Image button
+        /// </summary>
         private void menuButtonNext_Click(object sender, EventArgs e)
         {
             Program.Package.CurrentIndex++;
             RefreshDisplay();
         }
 
+        /// <summary>
+        /// Refreshes all control values after the image was changed
+        /// </summary>
         private void RefreshDisplay()
         {
+            // check if image was changed
             if (displayedIndex != Program.Package.CurrentIndex)
             {
                 int index = Program.Package.CurrentIndex;
