@@ -84,6 +84,16 @@ namespace PolarimetryProject
                 canvasBottomProfile.BackColor = Color.White;
             canvasImage.Size = canvasTopProfile.Size = canvasLeftProfile.Size =
                 canvasRightProfile.Size = canvasBottomProfile.Size = new Size(0, 0);
+            canvasImage.Paint += new PaintEventHandler(canvasImage_Paint);
+        }
+
+        /// <summary>
+        /// Main image will be painted here
+        /// </summary>
+        void canvasImage_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.DrawRectangle(new Pen(Color.Red), Program.Package.Selection.ToRectangle());
         }
 
         /// <summary>
