@@ -29,7 +29,7 @@ namespace PolarimetryProject
 
         public Rectangle ToRectangle()
         {
-            return new Rectangle(Top, Bottom, Width, Height);
+            return new Rectangle(Top, Left, Width, Height);
         }
     }
 }
