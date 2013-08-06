@@ -79,18 +79,68 @@ namespace PolarimetryProject
         /// </summary>
         public CanvasGroup()
         {
+            // set view
             canvasImage.BackColor = canvasLeftProfile.BackColor =
                 canvasTopProfile.BackColor = canvasRightProfile.BackColor =
                 canvasBottomProfile.BackColor = Color.White;
             canvasImage.Size = canvasTopProfile.Size = canvasLeftProfile.Size =
                 canvasRightProfile.Size = canvasBottomProfile.Size = new Size(0, 0);
+            // set events
             canvasImage.Paint += new PaintEventHandler(canvasImage_Paint);
+            canvasLeftProfile.Paint += new PaintEventHandler(canvasLeftProfile_Paint);
+            canvasTopProfile.Paint += new PaintEventHandler(canvasTopProfile_Paint);
+            canvasRightProfile.Paint += new PaintEventHandler(canvasRightProfile_Paint);
+            canvasBottomProfile.Paint += new PaintEventHandler(canvasBottomProfile_Paint);
+        }
+
+        void canvasBottomProfile_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            byte[] profile = Program.Package.CurrentPattern.GetRowProfile(
+                Program.Package.Selection.Bottom);
+            Point[] graph = new Point[profile.Length];
+            for (int i = 0; i < graph.Length; i++)
+                graph[i] = new Point(i, range - profile[i] / 2);
+            g.DrawLines(new Pen(Color.Blue), graph);
+        }
+
+        void canvasRightProfile_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            byte[] profile = Program.Package.CurrentPattern.GetColumnProfile(
+                Program.Package.Selection.Right);
+            Point[] graph = new Point[profile.Length];
+            for (int i = 0; i < graph.Length; i++)
+                graph[i] = new Point(profile[i] / 2, i);
+            g.DrawLines(new Pen(Color.Blue), graph);
+        }
+
+        void canvasTopProfile_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            byte[] profile = Program.Package.CurrentPattern.GetRowProfile(
+                Program.Package.Selection.Top);
+            Point[] graph = new Point[profile.Length];
+            for (int i = 0; i < graph.Length; i++)
+                graph[i] = new Point(i, range - profile[i] / 2);
+            g.DrawLines(new Pen(Color.Blue), graph);
+        }
+
+        void canvasLeftProfile_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            byte[] profile = Program.Package.CurrentPattern.GetColumnProfile(
+                Program.Package.Selection.Left);
+            Point[] graph = new Point[profile.Length];
+            for (int i = 0; i < graph.Length; i++)
+                graph[i] = new Point(profile[i] / 2, i);
+            g.DrawLines(new Pen(Color.Blue), graph);
         }
 
         /// <summary>
         /// Main image will be painted here
         /// </summary>
-        void canvasImage_Paint(object sender, PaintEventArgs e)
+        private void canvasImage_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
             g.DrawRectangle(new Pen(Color.Red), Program.Package.Selection.ToRectangle());
