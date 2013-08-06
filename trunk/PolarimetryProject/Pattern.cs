@@ -15,6 +15,10 @@ namespace PolarimetryProject
 
         public Image Image { get { return ImageMatrix.ToBitmap(); } }
 
+        public int Width { get { return ImageMatrix.Columns; } }
+
+        public int Height { get { return ImageMatrix.Rows; } }
+
         public Pattern(string filePath)
         {
             ImageMatrix = new ImageMatrix(filePath);

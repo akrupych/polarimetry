@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CanvasGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +59,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageMatrix.cs" />
+    <Compile Include="MyRectangle.cs" />
     <Compile Include="Package.cs" />
     <Compile Include="Pattern.cs" />
     <Compile Include="Program.cs" />
