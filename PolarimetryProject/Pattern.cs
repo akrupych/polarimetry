@@ -43,14 +43,25 @@ namespace PolarimetryProject
             FileName = Path.GetFileName(filePath);
         }
 
-        public byte[] GetRowProfile(int row)
+        public byte[] GetProfileFromSelectionEdge(MyRectangle.Edge edge)
         {
-            return ImageMatrix.GetRow(row);
-        }
-
-        public byte[] GetColumnProfile(int column)
-        {
-            return ImageMatrix.GetColumn(column);
+            MyRectangle selection = Program.Package.Selection;
+            switch (edge)
+            {
+                case MyRectangle.Edge.Bottom:
+                    return ImageMatrix.GetRow(selection.Bottom/*,
+                        selection.Left, selection.Right*/);
+                case MyRectangle.Edge.Left:
+                    return ImageMatrix.GetColumn(selection.Left/*,
+                        selection.Top, selection.Bottom*/);
+                case MyRectangle.Edge.Right:
+                    return ImageMatrix.GetColumn(selection.Right/*,
+                        selection.Top, selection.Bottom*/);
+                case MyRectangle.Edge.Top:
+                    return ImageMatrix.GetRow(selection.Top/*,
+                        selection.Left, selection.Right*/);
+                default: return null;
+            }
         }
     }
 }

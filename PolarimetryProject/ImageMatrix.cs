@@ -134,8 +134,37 @@ namespace PolarimetryProject
         public byte[] GetRow(int row)
         {
             byte[] result = new byte[Columns];
-            // array implementation allows to increase effectiveness
+            // array implementation allows increasing effectiveness
             Array.Copy(Data, row * Columns, result, 0, Columns);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns range of row profile
+        /// </summary>
+        /// <param name="row">Row index</param>
+        /// <param name="from">Start column index</param>
+        /// <param name="to">End column index</param>
+        /// <returns>New array with row range bytes</returns>
+        public byte[] GetRow(int row, int from, int to)
+        {
+            byte[] result = new byte[to - from];
+            Array.Copy(Data, row * Columns + from, result, 0, to - from);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns range of column profile
+        /// </summary>
+        /// <param name="row">Column index</param>
+        /// <param name="from">Start row index</param>
+        /// <param name="to">End row index</param>
+        /// <returns>New array with column range bytes</returns>
+        public byte[] GetColumn(int column, int from, int to)
+        {
+            byte[] result = new byte[to - from];
+            for (int i = 0; i < result.Length; i++)
+                result[i] = this[i, column];
             return result;
         }
     }

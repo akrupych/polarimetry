@@ -35,6 +35,7 @@
             this.menuLabelPosition = new System.Windows.Forms.ToolStripLabel();
             this.menuButtonPrev = new System.Windows.Forms.ToolStripButton();
             this.menuButtonNext = new System.Windows.Forms.ToolStripButton();
+            this.canvasGroup = new PolarimetryProject.CanvasGroup();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,12 +96,21 @@
             this.menuButtonNext.Text = "Next Image";
             this.menuButtonNext.Click += new System.EventHandler(this.menuButtonNext_Click);
             // 
+            // canvasGroup
+            // 
+            this.canvasGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.canvasGroup.Location = new System.Drawing.Point(0, 25);
+            this.canvasGroup.Name = "canvasGroup";
+            this.canvasGroup.Size = new System.Drawing.Size(644, 577);
+            this.canvasGroup.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(644, 582);
+            this.ClientSize = new System.Drawing.Size(644, 602);
+            this.Controls.Add(this.canvasGroup);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
             this.Text = "Polarimetry";
@@ -119,6 +129,7 @@
         private System.Windows.Forms.ToolStripLabel menuLabelPosition;
         private System.Windows.Forms.ToolStripButton menuButtonPrev;
         private System.Windows.Forms.ToolStripButton menuButtonNext;
+        private CanvasGroup canvasGroup;
 
     }
 }
