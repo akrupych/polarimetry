@@ -38,7 +38,7 @@ namespace PolarimetryProject
         /// </summary>
         private void menuButtonOpen_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
+           FolderBrowserDialog dialog = new FolderBrowserDialog();
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 Program.Package = new Package(dialog.SelectedPath);

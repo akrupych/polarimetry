@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PolarimetryProject
 {
@@ -43,6 +44,11 @@ namespace PolarimetryProject
                 if (Path.GetFileName(file).ToLower().StartsWith("r") &&
                     Path.GetExtension(file).ToLower().Equals(".tif"))
                     Patterns.Add(new Pattern(file));
+            if (Patterns.Count <= 3)
+            {
+                MessageBox.Show("Can't open them.");
+            }
+            
             if (Patterns.Count > 0)
             {
                 int width = Patterns[0].Width;
