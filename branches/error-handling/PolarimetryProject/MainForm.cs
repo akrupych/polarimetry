@@ -44,15 +44,17 @@ namespace PolarimetryProject
                 try
                 {
                     Program.Package = new Package(dialog.SelectedPath);
+                    displayedIndex = -1;
+                    RefreshDisplay();
                 }
                 catch (Exception error)
                 {
 
                     MessageBox.Show("Can't be loaded, because of :" + error.Message);
+                    menuButtonOpen_Click(sender, e);
                 }
                 
-                displayedIndex = -1;
-                RefreshDisplay();
+                
             }
         }
 
