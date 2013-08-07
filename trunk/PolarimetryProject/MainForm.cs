@@ -21,7 +21,7 @@ namespace PolarimetryProject
         /// <summary>
         /// Main image with profiles
         /// </summary>
-        private CanvasGroup canvasGroup = new CanvasGroup();
+        //private CanvasGroup canvasGroup = new CanvasGroup();
 
         /// <summary>
         /// Initializes all the controls
@@ -29,7 +29,7 @@ namespace PolarimetryProject
         public MainForm()
         {
             InitializeComponent();
-            canvasGroup.Bind(Controls);
+            //canvasGroup.Bind(Controls);
             // y:=c1+ c2*cos(2*(x-c3)*pi/180);
         }
 

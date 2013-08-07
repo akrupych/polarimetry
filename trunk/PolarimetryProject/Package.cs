@@ -47,7 +47,7 @@ namespace PolarimetryProject
             {
                 int width = Patterns[0].Width;
                 int height = Patterns[0].Height;
-                Selection = new MyRectangle(width / 4, height / 4, width * 3 / 4, height * 3 / 4);
+                Selection = new MyRectangle(height / 4, width / 4, width * 3 / 4, height * 3 / 4);
             }
         }
     }
