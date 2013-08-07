@@ -41,7 +41,16 @@ namespace PolarimetryProject
            FolderBrowserDialog dialog = new FolderBrowserDialog();
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                Program.Package = new Package(dialog.SelectedPath);
+                try
+                {
+                    Program.Package = new Package(dialog.SelectedPath);
+                }
+                catch (Exception error)
+                {
+
+                    MessageBox.Show("Can't be loaded, because of :" + error.Message);
+                }
+                
                 displayedIndex = -1;
                 RefreshDisplay();
             }
